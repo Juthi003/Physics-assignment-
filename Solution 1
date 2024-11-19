@@ -1,0 +1,52 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+#define yes cout << "Yes\n"
+#define no cout << "No\n"
+#define nl << "\n"
+#define ll long long
+string Color(double wavelength)
+{
+    if (wavelength >= 380 && wavelength < 450)
+        return "Violet";
+    else if (wavelength >= 450 && wavelength < 485)
+        return "Blue";
+    else if (wavelength >= 485 && wavelength < 500)
+        return "Cyan";
+    else if (wavelength >= 500 && wavelength < 565)
+        return "Green";
+    else if (wavelength >= 565 && wavelength < 590)
+        return "Yellow";
+    else if (wavelength >= 590 && wavelength < 625)
+        return "Orange";
+    else if (wavelength >= 625 && wavelength <= 750)
+        return "Red";
+    else
+        return "Unknown";
+}
+
+void error()
+{
+    double m, d, theta;
+    cin >> m;
+    cin >> d;
+    cin >> theta;
+    d *= 1e-6;
+    theta = theta * M_PI / 180;
+    double wavelength = (d * sin(theta)) / m * 1e9;
+    string color = Color(wavelength);
+    cout << "Wavelength: " << wavelength << " nm\n";
+    cout << "Color: " << color nl;
+}
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+
+    int t;
+    cin >> t;
+    while (t--)
+    {
+        error();
+    }
+}
